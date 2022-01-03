@@ -163,8 +163,4 @@ public class HHFileHelper: NSObject
         
         return fileCount
     }
-    
-    
-    
-    
 }

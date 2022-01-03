@@ -15,6 +15,8 @@
 		3FA5AA9C2782F88700A375E8 /* FolderInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5AA9B2782F88700A375E8 /* FolderInfoRepository.swift */; };
 		3FA5AA9E2782F8CE00A375E8 /* FolderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5AA9D2782F8CE00A375E8 /* FolderInfo.swift */; };
 		3FA5AAA02782F91C00A375E8 /* HHFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5AA9F2782F91C00A375E8 /* HHFileHelper.swift */; };
+		3FA5AAA227831E7600A375E8 /* String + Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5AAA127831E7600A375E8 /* String + Helper.swift */; };
+		3FA5AAA42783204800A375E8 /* FileBookmarkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5AAA32783204800A375E8 /* FileBookmarkHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		3FA5AA9B2782F88700A375E8 /* FolderInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderInfoRepository.swift; sourceTree = "<group>"; };
 		3FA5AA9D2782F8CE00A375E8 /* FolderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderInfo.swift; sourceTree = "<group>"; };
 		3FA5AA9F2782F91C00A375E8 /* HHFileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHFileHelper.swift; sourceTree = "<group>"; };
+		3FA5AAA127831E7600A375E8 /* String + Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String + Helper.swift"; sourceTree = "<group>"; };
+		3FA5AAA32783204800A375E8 /* FileBookmarkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileBookmarkHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		3F55121A2782E8B10042600B /* CollectionComposer2 */ = {
 			isa = PBXGroup;
 			children = (
+				3FA5AAA32783204800A375E8 /* FileBookmarkHandler.swift */,
 				3F55121B2782E8B10042600B /* CollectionComposer2App.swift */,
 				3F55121D2782E8B10042600B /* ContentView.swift */,
 				3FA5AA992782F30E00A375E8 /* ViewController.swift */,
@@ -69,6 +74,7 @@
 				3FA5AA9B2782F88700A375E8 /* FolderInfoRepository.swift */,
 				3FA5AA9D2782F8CE00A375E8 /* FolderInfo.swift */,
 				3FA5AA9F2782F91C00A375E8 /* HHFileHelper.swift */,
+				3FA5AAA127831E7600A375E8 /* String + Helper.swift */,
 			);
 			path = CollectionComposer2;
 			sourceTree = "<group>";
@@ -151,10 +157,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FA5AAA42783204800A375E8 /* FileBookmarkHandler.swift in Sources */,
 				3FA5AA9A2782F30E00A375E8 /* ViewController.swift in Sources */,
 				3FA5AA9C2782F88700A375E8 /* FolderInfoRepository.swift in Sources */,
 				3FA5AA9E2782F8CE00A375E8 /* FolderInfo.swift in Sources */,
 				3F55121E2782E8B10042600B /* ContentView.swift in Sources */,
+				3FA5AAA227831E7600A375E8 /* String + Helper.swift in Sources */,
 				3F55121C2782E8B10042600B /* CollectionComposer2App.swift in Sources */,
 				3FA5AAA02782F91C00A375E8 /* HHFileHelper.swift in Sources */,
 			);

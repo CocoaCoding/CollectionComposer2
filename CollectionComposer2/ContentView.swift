@@ -20,15 +20,16 @@ struct ContentView: View {
             Text("Sourcepaths")
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            Table(controller.folderInfos) {
+            Table(controller.folderInfos ,selection: $controller.selectedFolderInfoIds  ) {
                 TableColumn("Path", value: \.FolderDisplayValue)
                 TableColumn("Files", value: \.FileCountDisplayValue).width(50)
             }
             
             HStack {
-                Button("Add Source") { controller.addSourceFolder() }
+                Button("Add Folder") { controller.addSourceFolder() }
                 Button("Count Files") { controller.countSourceFoldersFiles() }
                 Spacer()
+                Button("Remove Folder") { controller.removeSourceFolder() }
             }
                    
             VStack {

@@ -37,6 +37,20 @@ public class FolderInfoRepository
         }
     }
     
+    public func removeItemById(id: UUID)
+    {
+        var index = 0
+        for info in folderInfos
+        {
+            if info.id == id
+            {
+                self.folderInfos.remove(at: index)
+                return
+            }
+            index += 1
+        }
+    }
+        
     public func Load()
     {
         do {
