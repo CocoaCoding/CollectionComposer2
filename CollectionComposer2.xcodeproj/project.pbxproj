@@ -11,6 +11,10 @@
 		3F55121E2782E8B10042600B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55121D2782E8B10042600B /* ContentView.swift */; };
 		3F5512202782E8B30042600B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F55121F2782E8B30042600B /* Assets.xcassets */; };
 		3F5512232782E8B30042600B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F5512222782E8B30042600B /* Preview Assets.xcassets */; };
+		3FA5AA9A2782F30E00A375E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5AA992782F30E00A375E8 /* ViewController.swift */; };
+		3FA5AA9C2782F88700A375E8 /* FolderInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5AA9B2782F88700A375E8 /* FolderInfoRepository.swift */; };
+		3FA5AA9E2782F8CE00A375E8 /* FolderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5AA9D2782F8CE00A375E8 /* FolderInfo.swift */; };
+		3FA5AAA02782F91C00A375E8 /* HHFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5AA9F2782F91C00A375E8 /* HHFileHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		3F55121F2782E8B30042600B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F5512222782E8B30042600B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3F5512242782E8B30042600B /* CollectionComposer2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CollectionComposer2.entitlements; sourceTree = "<group>"; };
+		3FA5AA992782F30E00A375E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3FA5AA9B2782F88700A375E8 /* FolderInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderInfoRepository.swift; sourceTree = "<group>"; };
+		3FA5AA9D2782F8CE00A375E8 /* FolderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderInfo.swift; sourceTree = "<group>"; };
+		3FA5AA9F2782F91C00A375E8 /* HHFileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHFileHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +62,13 @@
 			children = (
 				3F55121B2782E8B10042600B /* CollectionComposer2App.swift */,
 				3F55121D2782E8B10042600B /* ContentView.swift */,
+				3FA5AA992782F30E00A375E8 /* ViewController.swift */,
 				3F55121F2782E8B30042600B /* Assets.xcassets */,
 				3F5512242782E8B30042600B /* CollectionComposer2.entitlements */,
 				3F5512212782E8B30042600B /* Preview Content */,
+				3FA5AA9B2782F88700A375E8 /* FolderInfoRepository.swift */,
+				3FA5AA9D2782F8CE00A375E8 /* FolderInfo.swift */,
+				3FA5AA9F2782F91C00A375E8 /* HHFileHelper.swift */,
 			);
 			path = CollectionComposer2;
 			sourceTree = "<group>";
@@ -139,8 +151,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FA5AA9A2782F30E00A375E8 /* ViewController.swift in Sources */,
+				3FA5AA9C2782F88700A375E8 /* FolderInfoRepository.swift in Sources */,
+				3FA5AA9E2782F8CE00A375E8 /* FolderInfo.swift in Sources */,
 				3F55121E2782E8B10042600B /* ContentView.swift in Sources */,
 				3F55121C2782E8B10042600B /* CollectionComposer2App.swift in Sources */,
+				3FA5AAA02782F91C00A375E8 /* HHFileHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

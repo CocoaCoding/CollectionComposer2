@@ -12,15 +12,7 @@ struct Person: Identifiable {
 
 struct ContentView: View {
     
-    @State var delete : Bool = true
-    @State var text : String = "Hello World"
-    
-    private var people = [
-        Person(givenName: "Juan", familyName: "Chavez"),
-        Person(givenName: "Mei", familyName: "Chen"),
-        Person(givenName: "Tom", familyName: "Clark"),
-        Person(givenName: "Gita", familyName: "Kumar"),
-    ]
+    @StateObject var controller = ViewController()
         
     var body: some View {
 
@@ -28,14 +20,14 @@ struct ContentView: View {
             Text("Sourcepaths")
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            Table(people) {
-               TableColumn("Path", value: \.givenName)
-               TableColumn("Files", value: \.familyName)
+            Table(controller.folderInfos) {
+                TableColumn("Path", value: \.FolderDisplayValue)
+                TableColumn("Files", value: \.FileCountDisplayValue).width(50)
             }
             
             HStack {
-                Button("Add Source") {}
-                Button("Count Files") {}
+                Button("Add Source") { controller.addSourceFolder() }
+                Button("Count Files") { controller.countSourceFoldersFiles() }
                 Spacer()
             }
                    
@@ -44,24 +36,24 @@ struct ContentView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
                 HStack {
-                    TextField("", text: $text)
-                    Button("...") {}
+                    TextField("", text: $controller.destinationPath)
+                    Button("...") { controller.pickDestinationFolder() }
                 }
                 
                 Text("Number of files to copy")
                     .frame(maxWidth: .infinity, alignment: .leading)
-                TextField("", text: $text)
+                TextField("", text: $controller.numbersOfFilesToCopy)
                 
                 Text("Contains Keywords (seperate with comma)")
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    TextField("", text: $text)
+                TextField("", text: $controller.keywords)
                             
-                Toggle("Delete Original Files", isOn: $delete)
+                Toggle("Delete Original Files", isOn: $controller.deleteOriginal)
                     .frame(maxWidth: .infinity, alignment: .leading)
             
                 HStack {
                     Spacer()
-                    Button("Copy Files") {}
+                    Button("Copy Files") { controller.copyFiles() }
                 }
             }
 
