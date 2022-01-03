@@ -1,12 +1,20 @@
 //  FileBookmarkHandler.swift
-//  Picture Downloader
 //  Created by Holger Hinzberg on 26.11.20.
-
+// based on
 // https://github.com/sidmhatre/GetFolderAccessMacOS.git
+
+// 1. Add this to the Entitlements File
 // <key>com.apple.security.files.user-selected.read-write</key>
 // <true/>
 // <key>com.apple.security.files.bookmarks.app-scope</key>
 // <true/>
+
+// 2. Add a folder to the bookmark list anytime you access a folder
+// FileBookmarkHandler.shared.storeFolderInBookmark(url: url)
+// FileBookmarkHandler.shared.saveBookmarksData()
+
+// 3. Restore saved bookmarks in applicationDidFinishLaunching
+// FileBookmarkHandler.shared.loadBookmarks()
 
 import Cocoa
 

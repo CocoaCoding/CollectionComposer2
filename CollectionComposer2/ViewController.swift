@@ -78,6 +78,9 @@ public class ViewController : ObservableObject {
                 self.folderInfoRepository.Add(info: foldersInfo)
                 self.folderInfoRepository.Save()
                 self.folderInfos = folderInfoRepository.folderInfos
+                
+                FileBookmarkHandler.shared.storeFolderInBookmark(url: folderUrl)
+                FileBookmarkHandler.shared.saveBookmarksData()
             }
         }
     }
@@ -87,6 +90,7 @@ public class ViewController : ObservableObject {
         for id in selectedFolderInfoIds {
             folderInfoRepository.removeItemById(id: id)
         }
+        self.folderInfoRepository.Save()
         self.folderInfos = folderInfoRepository.folderInfos
     }
         
@@ -144,6 +148,8 @@ public class ViewController : ObservableObject {
         if let url = self.openFileDialog()
         {
             self.destinationPath = url.path
+            FileBookmarkHandler.shared.storeFolderInBookmark(url: url)
+            FileBookmarkHandler.shared.saveBookmarksData()
         }
     }
     

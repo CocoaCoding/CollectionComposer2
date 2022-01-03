@@ -12,7 +12,6 @@ struct CollectionComposer2App: App {
     
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
-    
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -24,6 +23,6 @@ struct CollectionComposer2App: App {
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification)
     {
-        // Insert code here to initialize your application
+        FileBookmarkHandler.shared.loadBookmarks()
     }
 }
