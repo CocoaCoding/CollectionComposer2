@@ -1,10 +1,11 @@
-//  ViewController.swift
+//  ContentViewController.swift
 //  CollectionComposer2
 //  Created by Holger Hinzberg on 03.01.22.
 
 import SwiftUI
+import Hinzberg_Swift_Foundation
 
-public class ViewController : ObservableObject {
+public class ContentViewController : ObservableObject {
     
     @AppStorage("destinationPath") var destinationPath: String = ""
     @AppStorage("keywords") var keywords: String = ""
@@ -28,82 +29,6 @@ public class ViewController : ObservableObject {
         fileDialog.canChooseDirectories = true
         fileDialog.runModal()
         return fileDialog.url
-    }
-    
-    private func getFilesURLFromFolder(_ folderURL: URL) -> [URL]?
-    {
-        let options: FileManager.DirectoryEnumerationOptions =
-            [.skipsHiddenFiles, .skipsSubdirectoryDescendants, .skipsPackageDescendants]
-        
-        let fileManager = FileManager.default
-        let resourceValueKeys = [URLResourceKey.isRegularFileKey, URLResourceKey.typeIdentifierKey]
-        
-        guard let directoryEnumerator = fileManager.enumerator(at: folderURL, includingPropertiesForKeys: resourceValueKeys,
-                                                               options: options, errorHandler: { url, error in
-                                                                print("`directoryEnumerator` error: \(error).")
-                                                                return true
-        }) else { return nil }
-        
-        var urls: [URL] = []
-        for case let url as URL in directoryEnumerator
-        {
-            do {
-                let resourceValues = try (url as NSURL).resourceValues(forKeys: resourceValueKeys)
-                guard let isRegularFileResourceValue = resourceValues[URLResourceKey.isRegularFileKey] as? NSNumber else { continue }
-                guard isRegularFileResourceValue.boolValue else { continue }
-                guard let fileType = resourceValues[URLResourceKey.typeIdentifierKey] as? String else { continue }
-                guard UTTypeConformsTo(fileType as CFString, "public.image" as CFString) else { continue }
-                urls.append(url)
-            }
-            catch
-            {
-                print("Unexpected error occured: \(error).")
-            }
-        }
-        return urls
-    }
-    
-    // MARK: - Button Actions
-    
-    public func addSourceFolder()
-    {
-        if let folderUrl = self.openFileDialog()
-        {
-            if folderUrl.path != ""
-            {
-                let fileHelper = HHFileHelper()
-                let foldersInfo = FolderInfo()
-                foldersInfo.Folder = folderUrl.path
-                foldersInfo.FileCount = fileHelper.getFilesCount(folderPath: folderUrl.path)
-                self.folderInfoRepository.Add(info: foldersInfo)
-                self.folderInfoRepository.Save()
-                self.folderInfos = folderInfoRepository.folderInfos
-                
-                FileBookmarkHandler.shared.storeFolderInBookmark(url: folderUrl)
-                FileBookmarkHandler.shared.saveBookmarksData()
-            }
-        }
-    }
-    
-    public func removeSourceFolder()
-    {
-        for id in selectedFolderInfoIds {
-            folderInfoRepository.removeItemById(id: id)
-        }
-        self.folderInfoRepository.Save()
-        self.folderInfos = folderInfoRepository.folderInfos
-    }
-        
-    public func countSourceFoldersFiles() {
-        let filesHelper = HHFileHelper()
-        let count = self.folderInfoRepository.GetCount()
-        
-        for index in 0..<count
-        {
-            let info = self.folderInfoRepository.GetItemAt(index: index)
-            info.FileCount = filesHelper.getFilesCount(folderPath: info.Folder)
-        }
-        self.folderInfos = folderInfoRepository.folderInfos
     }
     
     private func getRandomFileUrls(_ fileURLs:[URL], count:Int, containingKeywords:[String]) -> [URL]
@@ -144,6 +69,47 @@ public class ViewController : ObservableObject {
         return randomFileUrlsArray
     }
     
+    // MARK: - Button Actions
+    
+    public func addSourceFolder()
+    {
+        if let folderUrl = self.openFileDialog()
+        {
+            if folderUrl.path != ""
+            {
+                let foldersInfo = FolderInfo()
+                foldersInfo.Folder = folderUrl.path
+                foldersInfo.FileCount = FileHelper.shared.getFilesCount(folderPath: folderUrl.path)
+                self.folderInfoRepository.Add(info: foldersInfo)
+                self.folderInfoRepository.Save()
+                self.folderInfos = folderInfoRepository.folderInfos
+                
+                FileBookmarkHandler.shared.storeFolderInBookmark(url: folderUrl)
+                FileBookmarkHandler.shared.saveBookmarksData()
+            }
+        }
+    }
+    
+    public func removeSourceFolder()
+    {
+        for id in selectedFolderInfoIds {
+            folderInfoRepository.removeItemById(id: id)
+        }
+        self.folderInfoRepository.Save()
+        self.folderInfos = folderInfoRepository.folderInfos
+    }
+        
+    public func countSourceFoldersFiles() {
+        let count = self.folderInfoRepository.GetCount()
+        
+        for index in 0..<count
+        {
+            let info = self.folderInfoRepository.GetItemAt(index: index)
+            info.FileCount = FileHelper.shared.getFilesCount(folderPath: info.Folder)
+        }
+        self.folderInfos = folderInfoRepository.folderInfos
+    }
+    
     public func pickDestinationFolder() {
         if let url = self.openFileDialog()
         {
@@ -164,7 +130,7 @@ public class ViewController : ObservableObject {
         {
             let info = self.folderInfoRepository.GetItemAt(index: index)
             let url = URL(fileURLWithPath: info.Folder)
-            info.FilesInFolder = self.getFilesURLFromFolder(url)
+            info.FilesInFolder = FileHelper.shared.getFilesURLFromFolder(url)
         }
         
         // Collect random URLs from the Folders
@@ -195,9 +161,8 @@ public class ViewController : ObservableObject {
         }
         
         // Copy the random Files to the Destination
-        let fileHelper = HHFileHelper()
         let destinationUrl = URL(fileURLWithPath: destinationPath);
-        let copycount = fileHelper.copyFiles(sourceUrls: randomFileUrls, toUrl: destinationUrl)
+        let copycount = FileHelper.shared.copyFiles(sourceUrls: randomFileUrls, toUrl: destinationUrl)
         copyCounterLabel = "\(copycount) files copied"
         
         // Delete original files
@@ -205,7 +170,7 @@ public class ViewController : ObservableObject {
         {
             for url in randomFileUrls
             {
-                let _ = fileHelper.deleteItemAtPath(sourcePath: url.path)
+                let _ = FileHelper.shared.deleteItemAtPath(sourcePath: url.path)
             }
         }
     }

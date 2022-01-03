@@ -11,12 +11,12 @@
 		3F55121E2782E8B10042600B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55121D2782E8B10042600B /* ContentView.swift */; };
 		3F5512202782E8B30042600B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F55121F2782E8B30042600B /* Assets.xcassets */; };
 		3F5512232782E8B30042600B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F5512222782E8B30042600B /* Preview Assets.xcassets */; };
+		3F6D2387278378E900B5855E /* Hinzberg.Swift.Foundation in Frameworks */ = {isa = PBXBuildFile; productRef = 3F6D2386278378E900B5855E /* Hinzberg.Swift.Foundation */; };
 		3F75623E278334D90014FBEE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3F75623D278334D90014FBEE /* README.md */; };
-		3FA5AA9A2782F30E00A375E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5AA992782F30E00A375E8 /* ViewController.swift */; };
+		3FA5AA9A2782F30E00A375E8 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5AA992782F30E00A375E8 /* ContentViewController.swift */; };
 		3FA5AA9C2782F88700A375E8 /* FolderInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5AA9B2782F88700A375E8 /* FolderInfoRepository.swift */; };
 		3FA5AA9E2782F8CE00A375E8 /* FolderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5AA9D2782F8CE00A375E8 /* FolderInfo.swift */; };
-		3FA5AAA02782F91C00A375E8 /* HHFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5AA9F2782F91C00A375E8 /* HHFileHelper.swift */; };
-		3FA5AAA227831E7600A375E8 /* String + Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5AAA127831E7600A375E8 /* String + Helper.swift */; };
+		3FA5AAA02782F91C00A375E8 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5AA9F2782F91C00A375E8 /* FileHelper.swift */; };
 		3FA5AAA42783204800A375E8 /* FileBookmarkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5AAA32783204800A375E8 /* FileBookmarkHandler.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,11 +28,10 @@
 		3F5512222782E8B30042600B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3F5512242782E8B30042600B /* CollectionComposer2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CollectionComposer2.entitlements; sourceTree = "<group>"; };
 		3F75623D278334D90014FBEE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		3FA5AA992782F30E00A375E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3FA5AA992782F30E00A375E8 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		3FA5AA9B2782F88700A375E8 /* FolderInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderInfoRepository.swift; sourceTree = "<group>"; };
 		3FA5AA9D2782F8CE00A375E8 /* FolderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderInfo.swift; sourceTree = "<group>"; };
-		3FA5AA9F2782F91C00A375E8 /* HHFileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHFileHelper.swift; sourceTree = "<group>"; };
-		3FA5AAA127831E7600A375E8 /* String + Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String + Helper.swift"; sourceTree = "<group>"; };
+		3FA5AA9F2782F91C00A375E8 /* FileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
 		3FA5AAA32783204800A375E8 /* FileBookmarkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileBookmarkHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -41,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F6D2387278378E900B5855E /* Hinzberg.Swift.Foundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,14 +67,11 @@
 		3F55121A2782E8B10042600B /* CollectionComposer2 */ = {
 			isa = PBXGroup;
 			children = (
-				3FA5AAA32783204800A375E8 /* FileBookmarkHandler.swift */,
 				3F55121B2782E8B10042600B /* CollectionComposer2App.swift */,
 				3F55121D2782E8B10042600B /* ContentView.swift */,
-				3FA5AA992782F30E00A375E8 /* ViewController.swift */,
-				3FA5AA9B2782F88700A375E8 /* FolderInfoRepository.swift */,
-				3FA5AA9D2782F8CE00A375E8 /* FolderInfo.swift */,
-				3FA5AA9F2782F91C00A375E8 /* HHFileHelper.swift */,
-				3FA5AAA127831E7600A375E8 /* String + Helper.swift */,
+				3FA5AA992782F30E00A375E8 /* ContentViewController.swift */,
+				3F6D23882783824300B5855E /* Data */,
+				3F6D23892783824A00B5855E /* Helper */,
 				3F55121F2782E8B30042600B /* Assets.xcassets */,
 				3F5512242782E8B30042600B /* CollectionComposer2.entitlements */,
 				3F5512212782E8B30042600B /* Preview Content */,
@@ -88,6 +85,24 @@
 				3F5512222782E8B30042600B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3F6D23882783824300B5855E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3FA5AA9B2782F88700A375E8 /* FolderInfoRepository.swift */,
+				3FA5AA9D2782F8CE00A375E8 /* FolderInfo.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		3F6D23892783824A00B5855E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				3FA5AAA32783204800A375E8 /* FileBookmarkHandler.swift */,
+				3FA5AA9F2782F91C00A375E8 /* FileHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,6 +121,9 @@
 			dependencies = (
 			);
 			name = CollectionComposer2;
+			packageProductDependencies = (
+				3F6D2386278378E900B5855E /* Hinzberg.Swift.Foundation */,
+			);
 			productName = CollectionComposer2;
 			productReference = 3F5512182782E8B10042600B /* CollectionComposer2.app */;
 			productType = "com.apple.product-type.application";
@@ -134,6 +152,9 @@
 				Base,
 			);
 			mainGroup = 3F55120F2782E8B10042600B;
+			packageReferences = (
+				3F6D2385278378E900B5855E /* XCRemoteSwiftPackageReference "Hinzberg.Swift.Foundation" */,
+			);
 			productRefGroup = 3F5512192782E8B10042600B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -162,13 +183,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FA5AAA42783204800A375E8 /* FileBookmarkHandler.swift in Sources */,
-				3FA5AA9A2782F30E00A375E8 /* ViewController.swift in Sources */,
+				3FA5AA9A2782F30E00A375E8 /* ContentViewController.swift in Sources */,
 				3FA5AA9C2782F88700A375E8 /* FolderInfoRepository.swift in Sources */,
 				3FA5AA9E2782F8CE00A375E8 /* FolderInfo.swift in Sources */,
 				3F55121E2782E8B10042600B /* ContentView.swift in Sources */,
-				3FA5AAA227831E7600A375E8 /* String + Helper.swift in Sources */,
 				3F55121C2782E8B10042600B /* CollectionComposer2App.swift in Sources */,
-				3FA5AAA02782F91C00A375E8 /* HHFileHelper.swift in Sources */,
+				3FA5AAA02782F91C00A375E8 /* FileHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +386,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3F6D2385278378E900B5855E /* XCRemoteSwiftPackageReference "Hinzberg.Swift.Foundation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CocoaCoding/Hinzberg.Swift.Foundation.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3F6D2386278378E900B5855E /* Hinzberg.Swift.Foundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F6D2385278378E900B5855E /* XCRemoteSwiftPackageReference "Hinzberg.Swift.Foundation" */;
+			productName = Hinzberg.Swift.Foundation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3F5512102782E8B10042600B /* Project object */;
 }

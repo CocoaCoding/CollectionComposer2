@@ -12,10 +12,11 @@ struct Person: Identifiable {
 
 struct ContentView: View {
     
-    @StateObject var controller = ViewController()
+    @StateObject var controller = ContentViewController()
         
     func GetTitleText()  -> String {
-        return "Collection Composer 2"
+        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        return "Collection Composer - Version \(appVersion!)" 
     }
     
     var body: some View {
@@ -26,7 +27,7 @@ struct ContentView: View {
             
             Table(controller.folderInfos ,selection: $controller.selectedFolderInfoIds  ) {
                 TableColumn("Path", value: \.FolderDisplayValue)
-                TableColumn("Files", value: \.FileCountDisplayValue).width(50)
+               TableColumn("Files", value: \.FileCountDisplayValue).width(50)
             }
             
             HStack {
@@ -34,7 +35,7 @@ struct ContentView: View {
                 Button("Count Files") { controller.countSourceFoldersFiles() }
                 Spacer()
                 Button("Remove Folder") { controller.removeSourceFolder() }
-            }
+            }.padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
                    
             VStack {
                 Text("Destinationpath")

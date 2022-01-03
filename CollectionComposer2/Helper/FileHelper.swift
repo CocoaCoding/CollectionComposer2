@@ -1,21 +1,22 @@
-//
-//  HHSFileHelper.swift
-//  CollectionViewDemo
-//
-//  Created by Holger Hinzberg on 20.06.15.
-//  Copyright (c) 2015 Holger Hinzberg. All rights reserved.
-//
+//  FileHelper.swift
+//  Created by Holger Hinzberg on 2022.03.01
+//  Copyright (c) 2022 Holger Hinzberg. All rights reserved.
 
 import Foundation
 
-public class HHFileHelper: NSObject
+public class FileHelper
 {
-    class func getDocumentsDirectory() -> URL {
+    public static let shared = FileHelper()
+    
+    private init() {
+    }
+    
+    public func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
     
-    func checkIfFolderDoesExists(folder:String, doCreate:Bool) -> Bool
+    public func checkIfFolderDoesExists(folder:String, doCreate:Bool) -> Bool
     {
         let isDir:UnsafeMutablePointer<ObjCBool>? = nil
         let exists = FileManager.default.fileExists(atPath: folder, isDirectory: isDir)
@@ -36,7 +37,7 @@ public class HHFileHelper: NSObject
         return true
     }
     
-    func copyFiles(sourceUrls:[URL], toUrl destinationUrl: URL) -> Int
+    public func copyFiles(sourceUrls:[URL], toUrl destinationUrl: URL) -> Int
     {
         var copyCounter = 0;
         
@@ -56,7 +57,7 @@ public class HHFileHelper: NSObject
         return copyCounter;
     }
     
-    func deleteItemAtPath(sourcePath: String?) -> Bool
+    public func deleteItemAtPath(sourcePath: String?) -> Bool
     {
         var success = true
         
@@ -80,9 +81,8 @@ public class HHFileHelper: NSObject
         }
         return success
     }
-    
-    
-    func copyItemAtPath(sourcePath: String?, toPath destinationPath: String?) -> Bool
+        
+    public func copyItemAtPath(sourcePath: String?, toPath destinationPath: String?) -> Bool
     {
         var success = true
         
@@ -107,18 +107,19 @@ public class HHFileHelper: NSObject
         return success
     }
     
-    func getNumberOfImagefilesFromFolder(_ folderURL: URL) -> Int
+    public func getFilesCount(folderPath : String) -> Int
     {
-        var count = 0;
+        var fileCount = 0
+        let fileManager = FileManager.default
+        let url = URL(fileURLWithPath: folderPath)
         
-        if let urls = self.getImagesfilesURLsFromFolder(folderURL)
-        {
-            count = urls.count
-        }
-        return count
+        let fileURLs = try? fileManager.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
+        fileCount = fileURLs?.count ?? 0
+        
+        return fileCount
     }
     
-   func getImagesfilesURLsFromFolder(_ folderURL: URL) -> [URL]?
+    public func getFilesURLFromFolder(_ folderURL: URL) -> [URL]?
     {
         let options: FileManager.DirectoryEnumerationOptions =
             [.skipsHiddenFiles, .skipsSubdirectoryDescendants, .skipsPackageDescendants]
@@ -151,16 +152,4 @@ public class HHFileHelper: NSObject
         return urls
     }
     
-    
-    func getFilesCount(folderPath : String) -> Int
-    {
-        var fileCount = 0
-        let fileManager = FileManager.default
-        let url = URL(fileURLWithPath: folderPath)
-        
-        let fileURLs = try? fileManager.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
-        fileCount = fileURLs?.count ?? 0
-        
-        return fileCount
-    }
 }

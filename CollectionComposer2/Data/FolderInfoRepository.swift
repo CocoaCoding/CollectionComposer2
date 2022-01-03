@@ -11,7 +11,7 @@ public class FolderInfoRepository
     
     init()
     {
-        self.filename = HHFileHelper.getDocumentsDirectory().appendingPathComponent("folderinfo")
+        self.filename = FileHelper.shared.getDocumentsDirectory().appendingPathComponent("folderinfo")
     }
     
     public func Add(info : FolderInfo)
