@@ -11,6 +11,7 @@
 		3F55121E2782E8B10042600B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55121D2782E8B10042600B /* ContentView.swift */; };
 		3F5512202782E8B30042600B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F55121F2782E8B30042600B /* Assets.xcassets */; };
 		3F5512232782E8B30042600B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F5512222782E8B30042600B /* Preview Assets.xcassets */; };
+		3F75623E278334D90014FBEE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3F75623D278334D90014FBEE /* README.md */; };
 		3FA5AA9A2782F30E00A375E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5AA992782F30E00A375E8 /* ViewController.swift */; };
 		3FA5AA9C2782F88700A375E8 /* FolderInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5AA9B2782F88700A375E8 /* FolderInfoRepository.swift */; };
 		3FA5AA9E2782F8CE00A375E8 /* FolderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5AA9D2782F8CE00A375E8 /* FolderInfo.swift */; };
@@ -26,6 +27,7 @@
 		3F55121F2782E8B30042600B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F5512222782E8B30042600B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3F5512242782E8B30042600B /* CollectionComposer2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CollectionComposer2.entitlements; sourceTree = "<group>"; };
+		3F75623D278334D90014FBEE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3FA5AA992782F30E00A375E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3FA5AA9B2782F88700A375E8 /* FolderInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderInfoRepository.swift; sourceTree = "<group>"; };
 		3FA5AA9D2782F8CE00A375E8 /* FolderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderInfo.swift; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 		3F55120F2782E8B10042600B = {
 			isa = PBXGroup;
 			children = (
+				3F75623D278334D90014FBEE /* README.md */,
 				3F55121A2782E8B10042600B /* CollectionComposer2 */,
 				3F5512192782E8B10042600B /* Products */,
 			);
@@ -145,6 +148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F75623E278334D90014FBEE /* README.md in Resources */,
 				3F5512232782E8B30042600B /* Preview Assets.xcassets in Resources */,
 				3F5512202782E8B30042600B /* Assets.xcassets in Resources */,
 			);
