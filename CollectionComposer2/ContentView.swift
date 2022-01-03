@@ -14,6 +14,10 @@ struct ContentView: View {
     
     @StateObject var controller = ViewController()
         
+    func GetTitleText()  -> String {
+        return "Collection Composer 2"
+    }
+    
     var body: some View {
 
         VStack {
@@ -52,6 +56,9 @@ struct ContentView: View {
                 Toggle("Delete Original Files", isOn: $controller.deleteOriginal)
                     .frame(maxWidth: .infinity, alignment: .leading)
             
+                Text(controller.copyCounterLabel)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                
                 HStack {
                     Spacer()
                     Button("Copy Files") { controller.copyFiles() }
@@ -59,6 +66,7 @@ struct ContentView: View {
             }
 
         }.padding()
+            .navigationTitle(self.GetTitleText())
 
     }
 }

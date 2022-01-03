@@ -10,7 +10,7 @@ public class ViewController : ObservableObject {
     @AppStorage("keywords") var keywords: String = ""
     @AppStorage("numbersOfFilesToCopy") var numbersOfFilesToCopy: String = ""
     @AppStorage("deleteOriginal") var deleteOriginal: Bool = true
-    
+    @Published public var copyCounterLabel = ""
     @Published public var folderInfos = [FolderInfo]()
     @Published public var selectedFolderInfoIds = Set<FolderInfo.ID>()
     
@@ -155,7 +155,6 @@ public class ViewController : ObservableObject {
     
     public func copyFiles() {
         
-        //self.UpdateConfigValuesAndSave()
         //self.copyButton.isEnabled = false
         //self.copyCounterLabel.stringValue = ""
         
@@ -172,9 +171,9 @@ public class ViewController : ObservableObject {
         var itemIndex = 0
         var randomFileUrls = [URL]()
         let keywords = self.keywords.components(separatedBy: ",")
-        let countNeeded = Int(self.numbersOfFilesToCopy)! // todo
+        guard let countNeeded = Int(self.numbersOfFilesToCopy) else { return }
         
-        for _ in 0...countNeeded
+        for _ in 0..<countNeeded
         {
             let info = self.folderInfoRepository.GetItemAt(index: itemIndex)
             if let files = info.FilesInFolder
@@ -198,9 +197,8 @@ public class ViewController : ObservableObject {
         // Copy the random Files to the Destination
         let fileHelper = HHFileHelper()
         let destinationUrl = URL(fileURLWithPath: destinationPath);
-        let copyCounter = fileHelper.copyFiles(sourceUrls: randomFileUrls, toUrl: destinationUrl)
-        //self.copyCounterLabel.stringValue = "\(copyCounter) files copied"
-        //self.copyButton.isEnabled = true
+        let copycount = fileHelper.copyFiles(sourceUrls: randomFileUrls, toUrl: destinationUrl)
+        copyCounterLabel = "\(copycount) files copied"
         
         // Delete original files
         if deleteOriginal == true

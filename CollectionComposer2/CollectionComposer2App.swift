@@ -1,11 +1,9 @@
-//
 //  CollectionComposer2App.swift
 //  CollectionComposer2
-//
 //  Created by Holger Hinzberg on 03.01.22.
-//
 
 import SwiftUI
+import UserNotifications
 
 @main
 struct CollectionComposer2App: App {
@@ -17,7 +15,6 @@ struct CollectionComposer2App: App {
             ContentView()
         }
     }
-    
 }
 
 class AppDelegate: NSObject, NSApplicationDelegate {
