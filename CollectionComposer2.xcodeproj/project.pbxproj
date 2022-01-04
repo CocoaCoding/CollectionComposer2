@@ -18,6 +18,7 @@
 		3FA5AA9E2782F8CE00A375E8 /* FolderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5AA9D2782F8CE00A375E8 /* FolderInfo.swift */; };
 		3FA5AAA02782F91C00A375E8 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5AA9F2782F91C00A375E8 /* FileHelper.swift */; };
 		3FA5AAA42783204800A375E8 /* FileBookmarkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5AAA32783204800A375E8 /* FileBookmarkHandler.swift */; };
+		3FE234802784463500DE78EE /* FileHelperError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE2347F2784463500DE78EE /* FileHelperError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		3FA5AA9D2782F8CE00A375E8 /* FolderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderInfo.swift; sourceTree = "<group>"; };
 		3FA5AA9F2782F91C00A375E8 /* FileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
 		3FA5AAA32783204800A375E8 /* FileBookmarkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileBookmarkHandler.swift; sourceTree = "<group>"; };
+		3FE2347F2784463500DE78EE /* FileHelperError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHelperError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				3FA5AAA32783204800A375E8 /* FileBookmarkHandler.swift */,
 				3FA5AA9F2782F91C00A375E8 /* FileHelper.swift */,
+				3FE2347F2784463500DE78EE /* FileHelperError.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			files = (
 				3FA5AAA42783204800A375E8 /* FileBookmarkHandler.swift in Sources */,
 				3FA5AA9A2782F30E00A375E8 /* ContentViewController.swift in Sources */,
+				3FE234802784463500DE78EE /* FileHelperError.swift in Sources */,
 				3FA5AA9C2782F88700A375E8 /* FolderInfoRepository.swift in Sources */,
 				3FA5AA9E2782F8CE00A375E8 /* FolderInfo.swift in Sources */,
 				3F55121E2782E8B10042600B /* ContentView.swift in Sources */,

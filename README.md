@@ -10,9 +10,11 @@ Imagine you have different folders with vacation photos. Each folder is named af
 
 ## Changelog / History
 
+**2022-01-04**
+- Error Handling by File Copy
+
 **Version 2.0.0 (2022-01-03)**
- 
- - First Release
+  - First Release
 
 ## Todo
 A lot of things. I am sure.
